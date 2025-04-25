@@ -1,4 +1,4 @@
-/* src/App.css */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,6 +20,52 @@ h1 {
   color: #333;
   font-size: 2.5rem;
   margin-bottom: 20px;
+}
+.add-movie-form {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-movie-form h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.add-movie-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-movie-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-movie-form input:focus {
+  border: 1px solid #007bff;
+  outline: none;
+}
+
+.add-movie-form button {
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-movie-form button:hover {
+  background-color: #218838;
 }
 
 .movie-list {
@@ -72,26 +118,9 @@ h1 {
   font-size: 1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
-  width: 200px;
-  transition: border 0.3s ease;
 }
 
 .filter input:focus {
   border: 1px solid #007bff;
   outline: none;
-}
-
-button {
-  padding: 12px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
 }

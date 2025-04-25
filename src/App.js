@@ -1,5 +1,5 @@
-// src/App.jsx
 import React, { useState } from 'react';
+import AddMovieForm from './components/AddMovieForm';
 import MovieList from './components/MovieList';
 import Filter from './components/Filter';
 import './App.css'
@@ -28,16 +28,9 @@ const App = () => {
   // State to manage movies and filters
   const [filteredMovies, setFilteredMovies] = useState(movies);
   const [filters, setFilters] = useState({ title: '', rating: '' });
-
-  const handleAddMovie = () => {
-    // Example of adding a new movie
-    const newMovie = {
-      title: 'The Dark Knight',
-      description: 'A superhero crime drama',
-      posterURL: 'https://rukminim3.flixcart.com/image/850/1000/k8xduvk0/poster/j/m/z/medium-the-dark-knight-poster-decorative-wall-poster-wall-d-cor-original-imafqu8evqxuvfvg.jpeg?q=90&crop=false',
-      rating: 9.0,
-    };
-    const updatedMovies = [...movies, newMovie];
+  // add new movie function
+  const handleAddMovie = (movie) => {
+    const updatedMovies = [...movies, movie];
     setMovies(updatedMovies);
     setFilteredMovies(updatedMovies);
   };
@@ -58,8 +51,8 @@ const App = () => {
     <div className="app">
       <h1>Movie List</h1>
       <Filter onFilterChange={handleFilterChange} />
+      <AddMovieForm onAddMovie={handleAddMovie} />
       <MovieList movies={filteredMovies} />
-      <button onClick={handleAddMovie}>Add "The Dark Knight"</button>
     </div>
   );
 };
