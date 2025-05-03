@@ -6,6 +6,7 @@ const AddMovieForm = ({ onAddMovie }) => {
     description: '',
     posterURL: '',
     rating: '',
+    trailerURL:'',
   });
   // Function to handle input changes
   const handleInputChange = (e) => {
@@ -16,13 +17,14 @@ const AddMovieForm = ({ onAddMovie }) => {
   const handleAddMovie = (e) => {
     e.preventDefault();
 
-    if (newMovie.title && newMovie.description && newMovie.posterURL && newMovie.rating) {
+    if (newMovie.title && newMovie.description && newMovie.posterURL && newMovie.rating && newMovie.trailerURL) {
       onAddMovie(newMovie);
       setNewMovie({
         title: '',
         description: '',
         posterURL: '',
         rating: '',
+        trailerURL:'',
       });
     } else {
       alert('Please fill in all fields');
@@ -63,6 +65,14 @@ const AddMovieForm = ({ onAddMovie }) => {
           value={newMovie.rating}
           onChange={handleInputChange}
           placeholder="Movie Rating (1-10)"
+          required
+        />
+        <input
+          type="text"
+          name="Trailer URL"
+          value={newMovie.trailerURL}
+          onChange={handleInputChange}
+          placeholder="trailer URL"
           required
         />
         <button type="submit">Add Movie</button>
